@@ -5,8 +5,6 @@
 #define LED 			13			//led on pin13, for debugging
 #define LED_DLY			(100)		//for testing
 
-//#define ticks()			millie()	//map tick generator to millie()
-
 //global defines
 #define UTIL_TICKS01	(128)				//2's compliments, number of ticks at 0.1% cpu load -> 1ms loop cycle time. 100% @ UTIL_TICKS01*1000
 
@@ -17,6 +15,7 @@
 #define IO_FLP(port, pin)	digitalWrite(pin, !digitalRead(pin))
 #define IO_OUT(ddr, pin)	pinMode(pin, OUTPUT)
 #define _ticks()			micros()		//remap ticks() to micros()
+//#define _ticks()			millie()	//map tick generator to millie()
 
 //global variables
 volatile uint32_t util_tick=0;				//tick counter
